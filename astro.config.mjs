@@ -2,18 +2,18 @@
 
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import { defineConfig, passthroughImageService, fontProviders } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
-
-import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://example.com",
+  output: "static", // 1. Explicitly enforce SSG mode
   integrations: [mdx(), sitemap()],
 
   vite: {
     plugins: [tailwindcss()],
+    // 2. Vite overrides removed: They are unnecessary for pure SSG
   },
 
   fonts: [
@@ -57,9 +57,8 @@ export default defineConfig({
     },
   ],
 
-  image: {
-    service: passthroughImageService()
-  },
-  
-  adapter: cloudflare({imageService: { build: 'compile', runtime: 'cloudflare-binding' },}),
+  // 3. Image block block removed: Astro will automatically use Sharp 
+  // to perfectly optimize images during 'astro build'.
+
+  // 4. Cloudflare adapter REMOVED: It is not used for SSG.
 });
