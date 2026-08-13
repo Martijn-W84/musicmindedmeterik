@@ -2,7 +2,7 @@
 
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import { defineConfig, fontProviders } from "astro/config";
+import { defineConfig, passthroughImageService, fontProviders } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
 import cloudflare from "@astrojs/cloudflare";
@@ -57,5 +57,9 @@ export default defineConfig({
     },
   ],
 
+  image: {
+    service: passthroughImageService()
+  },
+  
   adapter: cloudflare(),
 });
