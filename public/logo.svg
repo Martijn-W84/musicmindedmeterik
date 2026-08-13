@@ -1,0 +1,16 @@
+<svg width="480" height="480" viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="240" cy="240" r="240" fill="black"/>
+<circle cx="240" cy="240" r="199" fill="black" stroke="white" stroke-width="2"/>
+<circle cx="240" cy="240" r="159" fill="black" stroke="white" stroke-width="2"/>
+<circle cx="240" cy="240" r="119" fill="black" stroke="white" stroke-width="2"/>
+<circle cx="240" cy="240" r="80" fill="white"/>
+<circle cx="240" cy="240" r="12" fill="black"/>
+<rect x="66.173" y="74.4157" width="12" height="256.479" transform="rotate(-45 66.173 74.4157)" fill="white"/>
+<rect x="73.6583" y="66.9304" width="32" height="128" transform="rotate(-45 73.6583 66.9304)" fill="white"/>
+<rect x="414.07" y="405.342" width="12" height="240" transform="rotate(135 414.07 405.342)" fill="white"/>
+<rect x="406.584" y="412.827" width="32" height="128" transform="rotate(135 406.584 412.827)" fill="white"/>
+<rect x="70.4157" y="418.07" width="12" height="252.512" transform="rotate(-135 70.4157 418.07)" fill="white"/>
+<rect x="62.9304" y="410.584" width="32" height="128" transform="rotate(-135 62.9304 410.584)" fill="white"/>
+<rect x="405.584" y="65.9304" width="12" height="240" transform="rotate(45 405.584 65.9304)" fill="white"/>
+<rect x="413.07" y="73.4157" width="32" height="128" transform="rotate(45 413.07 73.4157)" fill="white"/>
+</svg>

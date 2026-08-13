@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <main class="flex flex-col items-center gap-20">
+    <form
+      id="FORM_ID"
+      action="https://formspree.io/f/meajkwyg"
+      method="POST"
+      class="flex flex-col w-full max-w-lg gap-3"
+    >
+      <label> Je emailadres: </label>
+      <input
+        type="email"
+        name="email"
+        class="border rounded h-full min-h-8 flex-1 transition duration-600 ease-in-out bg-white shadow-none focus:border-2 focus:border-emerald-800 ring-0 outline-none focus-visible:ring-0 aria-invalid:ring-0"
+      />
+      <label> Je bericht: </label>
+      <textarea
+        name="message"
+        class="border rounded h-full min-h-60 flex-1 transition duration-300 ease-in-out  bg-white focus:border-2 focus:border-emerald-800 resize-none shadow-none ring-0 outline-none focus-visible:ring-0 aria-invalid:ring-0"
+      >
+      </textarea>
+      <!-- your other form fields go here -->
+      <button type="submit" class="cursor-pointer transition duration-500 bg-linear-to-r from-teal-500 to-sky-600 hover:from-sky-600 hover:to-teal-500 hover:shadow text-white font-bold py-2 px-4 rounded">Versturen</button>
+    </form>
+  </main>
+</BaseLayout>

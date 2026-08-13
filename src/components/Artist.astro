@@ -1,0 +1,77 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+type Props = CollectionEntry<"artists">["data"];
+
+const { name, description, members, category, aliases, homepage, heroImage } =
+  Astro.props;
+---
+
+<BaseLayout>
+  <main>
+    <article class="text-center flex flex-col items-center">
+      <div class="hero-image">
+        {
+          heroImage && (
+            <Image width={1020} height={510} src={heroImage} priority alt="" />
+          )
+        }
+      </div>
+      {
+        homepage && (
+          <a href={homepage} target="_blank" class="mt-6">
+            Website
+          </a>
+        )
+      }
+      <div class="w-full max-w-5xl">
+        <div class="title">
+          <h1 class="text-2xl font-bold">{name}</h1>
+          {members && <p class="mb-6">(Oud) Leden: {members}</p>}
+          {aliases && <p class="mb-6">Alias: {aliases}</p>}
+          <hr />
+        </div>
+        <slot />
+      </div>
+    </article>
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    width: calc(100% - 2em);
+    max-width: 100%;
+  }
+  .hero-image {
+    width: 100%;
+  }
+  .hero-image img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+  }
+  .prose {
+    width: 720px;
+    max-width: calc(100% - 2em);
+    margin: auto;
+    padding: 1em;
+    color: rgb(var(--gray-dark));
+  }
+  .title {
+    margin-bottom: 1em;
+    padding: 1em 0;
+    text-align: center;
+    line-height: 1;
+  }
+  .title h1 {
+    margin: 0 0 0.5em 0;
+  }
+  .date {
+    margin-bottom: 0.5em;
+    color: rgb(var(--gray));
+  }
+  .last-updated-on {
+    font-style: italic;
+  }
+</style>

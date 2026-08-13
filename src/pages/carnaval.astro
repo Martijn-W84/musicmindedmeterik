@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Artists from "../components/Artists.astro";
+import vaanAfhangTotDeSchaak from "../assets/vaanafhangtotdeschaak.mp3"
+---
+
+<BaseLayout>
+  <main class="flex flex-col items-center gap-20">
+    <figure>
+      <figcaption>Vaan de afhang tot de schaak:</figcaption>
+      <audio id="audio-player" controls src={vaanAfhangTotDeSchaak}></audio>
+    </figure>
+    
+    <section class="max-w-3xl">
+      <p>Sinds 2007 wordt er in Meterik een liedjesavond gehouden met carnaval. Ieder jaar zijn er weer diverse artiesten met een nieuw nummer.</p>
+      <br />
+      <p>Ga naar de website van de <a href="https://www.demeulewiekers.nl/" target="_blank" class="text-teal-600">Meulewiekers</a> voor meer info.</p>
+      <br />
+      <p>
+        Deze website is verre van compleet. Dus mocht je nog aanvullende informatie hebben, over een genoemde artiest of
+        iemand die er nog niet op staat, stuur dan je informatie op via de 
+        <a href="/contact" class="text-teal-600"> contact </a> pagina.
+      </p>
+    </section>
+    <section>
+      <Artists category="carnaval"></Artists>
+    </section>
+  </main>
+</BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const audio = document.getElementById('audio-player') as HTMLAudioElement;
+    if (audio) {
+      audio.load();
+      // Safe to play or re-attach controls here
+    }
+  });
+</script>
