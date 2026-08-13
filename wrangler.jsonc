@@ -5,7 +5,6 @@
 	"name": "musicmindedmeterik",
 	"assets": {
 		"directory": "./dist",
-		"binding": "ASSETS"
 	},
 	"observability": {
 		"enabled": true
