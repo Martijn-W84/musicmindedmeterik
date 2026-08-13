@@ -61,5 +61,5 @@ export default defineConfig({
     service: passthroughImageService()
   },
   
-  adapter: cloudflare(),
+  adapter: cloudflare({imageService: { build: 'compile', runtime: 'cloudflare-binding' },}),
 });
