@@ -51,7 +51,7 @@ import Logo from "../assets/logo.svg";
           <li>
             <a
               href="/contact"
-              class={`nav-link ${currentPath === "/contact" ? "active" : ""}`}
+              class={`nav-link ${currentPath.startsWith("/contact") ? "active" : ""}`}
             >
               Contact
             </a>
