@@ -2,7 +2,7 @@
 name: 'Concordia Meterik'
 description: ''
 category: 'Muziekvereniging'
-heroImage: '../../assets/artists/concordia.avif'
+heroImage: '../../assets/artists/concordia.webp'
 homepage: 'https://www.concordiameterik.nl/'
 ---
 
