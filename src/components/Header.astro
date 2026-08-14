@@ -11,14 +11,15 @@ import Logo from "../assets/logo.svg";
     <div
       class="max-w-7xl flex flex-wrap items-center justify-between mx-auto p-4"
     >
-      <div class="flex gap-4 items-center">
-        <Logo width={48} height={48} />
-        <a href="/" id="title" class="text-xl md:text-3xl font-bold"
-          >{SITE_TITLE}</a
-        >
-      </div>
+      <a href="/" id="title" class="text-xl md:text-3xl font-bold flex gap-4 items-center">
+          <Logo width={48} height={48} />
+          {SITE_TITLE}
+      </a>
+
       <!-- Mobile toggle -->
       <button
+        id="menuButton"
+        aria-label="Menu button"
         data-collapse-toggle="navbar-dropdown"
         class="inline-flex items-center p-2 w-10 h-10 md:hidden"
       >
