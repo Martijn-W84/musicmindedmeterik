@@ -12,8 +12,10 @@ import Logo from "../assets/logo.svg";
       class="max-w-7xl flex flex-wrap items-center justify-between mx-auto p-4"
     >
       <div class="flex gap-4 items-center">
-        <Logo width={48} height={48}/>
-        <a href="/" id="title" class="text-xl md:text-3xl font-bold">{SITE_TITLE}</a>
+        <Logo width={48} height={48} />
+        <a href="/" id="title" class="text-xl md:text-3xl font-bold"
+          >{SITE_TITLE}</a
+        >
       </div>
       <!-- Mobile toggle -->
       <button
@@ -111,9 +113,9 @@ import Logo from "../assets/logo.svg";
 
     let hasInitialized = false;
 
-    function moveIndicator(el) {
+    function moveIndicator(el: any) {
       const rect = el.getBoundingClientRect();
-      const parentRect = nav.getBoundingClientRect();
+      const parentRect = nav!.getBoundingClientRect();
       const isMobile = window.innerWidth < 768;
 
       const paddingX = 12; // matches px-3 (0.75rem)
@@ -122,22 +124,22 @@ import Logo from "../assets/logo.svg";
       const leftBase = rect.left - parentRect.left + paddingX;
 
       if (isMobile) {
-        indicator.style.width = width + "px";
-        indicator.style.left = leftBase + "px";
-        indicator.style.top =
+        indicator!.style.width = width + "px";
+        indicator!.style.left = leftBase + "px";
+        indicator!.style.top =
           rect.top - parentRect.top + rect.height - 4 + "px";
       } else {
-        indicator.style.width = width + "px";
-        indicator.style.left = leftBase + "px";
-        indicator.style.top = rect.bottom - parentRect.top - 4 + "px";
+        indicator!.style.width = width + "px";
+        indicator!.style.left = leftBase + "px";
+        indicator!.style.top = rect.bottom - parentRect.top - 4 + "px";
       }
 
       if (!hasInitialized) {
-        indicator.style.transition = "none";
-        indicator.style.opacity = "1";
+        indicator!.style.transition = "none";
+        indicator!.style.opacity = "1";
 
         requestAnimationFrame(() => {
-          indicator.style.transition = "";
+          indicator!.style.transition = "";
           hasInitialized = true;
         });
       }
@@ -153,7 +155,7 @@ import Logo from "../assets/logo.svg";
     if (active) moveIndicator(active);
 
     // reset
-    nav.addEventListener("mouseleave", () => {
+    nav!.addEventListener("mouseleave", () => {
       if (active) moveIndicator(active);
     });
 
@@ -170,7 +172,7 @@ import Logo from "../assets/logo.svg";
     const mobileMenu = document.getElementById("navbar-dropdown");
 
     mobileToggleBtn?.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
+      mobileMenu!.classList.toggle("hidden");
 
       setTimeout(() => {
         const active = document.querySelector(".nav-link.active");
